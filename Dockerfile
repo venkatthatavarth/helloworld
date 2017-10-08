@@ -4,9 +4,7 @@ FROM tomcat:8.0.38
 ARG PACKAGE_VERSION
 RUN echo "${PACKAGE_VERSION}" 
 ADD target/*.jar /usr/local/tomcat/webapps/ 
-COPY docker-entrypoint.sh /
-RUN chmod +x /docker-entrypoint.sh
-ENTRYPOINT ["/docker-entrypoint.sh"]
+
 CMD ["catalina.sh", "run"]
 
 #####
