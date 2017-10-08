@@ -4,7 +4,7 @@ FROM tomcat:8.0.38
 ARG PACKAGE_VERSION
 RUN echo "${PACKAGE_VERSION}" >> /usr/local/tomcat/webapps/version.txt
 
-COPY project.war /var/lib/jenkins/workspace/sample/target/java-maven-junit-helloworld-1.0-SNAPSHOT.jar
+COPY helloworld.jar /var/lib/jenkins/workspace/sample/target/java-maven-junit-helloworld-1.0-SNAPSHOT.jar
 COPY docker-entrypoint.sh /
 RUN chmod +x /docker-entrypoint.sh
 ENTRYPOINT ["/docker-entrypoint.sh"]
